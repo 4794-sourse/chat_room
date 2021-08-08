@@ -1,0 +1,1 @@
+gcc wechat.c ../common/common.c  ../common/udp_server.c  ../common/reactor.c  ../common/udp_client.c  ../common/client_discover.c ../common/heart_beat.c ../common/send_chat.c -I ../common/  -lpthread $1 $2

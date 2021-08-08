@@ -1,0 +1,100 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BLACK	common/color.h	11;"	d
+BLUE	common/color.h	19;"	d
+CHAT_ACK	common/wechat.h	23;"	d
+CHAT_FIN	common/wechat.h	24;"	d
+CHAT_HEART	common/wechat.h	25;"	d
+CHAT_MSG	common/wechat.h	27;"	d
+CHAT_SYN	common/wechat.h	22;"	d
+DBG	common/head.h	57;"	d
+DBG	common/head.h	59;"	d
+FL_ONLINE	common/wechat.h	37;"	d
+FL_SYNSENT	common/wechat.h	36;"	d
+GREEN	common/color.h	15;"	d
+HELP_WIDTH	common/chat_ui.h	12;"	d
+INPUT_HEIGHT	common/chat_ui.h	13;"	d
+L_BLACK	common/color.h	12;"	d
+L_BLUE	common/color.h	20;"	d
+L_GREEN	common/color.h	16;"	d
+L_PINK	common/color.h	21;"	d
+L_RED	common/color.h	14;"	d
+L_YELLOW	common/color.h	18;"	d
+MAX	wechat.c	9;"	d	file:
+MAXUSER	common/wechat.h	11;"	d
+MAXUSER	wechat.c	10;"	d	file:
+MSG_HEIGHT	common/chat_ui.h	11;"	d
+MSG_WIDTH	common/chat_ui.h	10;"	d
+Msg	common/wechat.h	/^struct Msg {$/;"	s
+NONE	common/color.h	10;"	d
+PINK	common/color.h	22;"	d
+RED	common/color.h	13;"	d
+User	common/wechat.h	/^struct User {$/;"	s
+YELLOW	common/color.h	17;"	d
+_BBB_H	test/bbb.h	9;"	d
+_CHAT_UI_H	common/chat_ui.h	9;"	d
+_CLIENT_DISCOVER_H	common/client_discover.h	9;"	d
+_COLOR_H	common/color.h	9;"	d
+_COMMON_H	common/common.h	9;"	d
+_HEAD_H	common/head.h	9;"	d
+_HEART_BEAT_H	common/heart_beat.h	9;"	d
+_REACTOR_H	common/reactor.h	9;"	d
+_SEND_CHAT_H	common/send_chat.h	9;"	d
+_UDP_CLIENT_H	common/udp_client.h	9;"	d
+_UDP_SERVER_H	common/udp_server.h	9;"	d
+_WECHAT_H	common/wechat.h	9;"	d
+a	test/eee.cpp	/^int a[100];$/;"	v
+add_event_ptr	common/reactor.c	/^void add_event_ptr(int epollfd, int fd, int events, struct User *user) {$/;"	f
+add_to_reactor	common/reactor.c	/^int add_to_reactor(int fd, struct User *user) {$/;"	f
+client_discover	common/client_discover.c	/^void *client_discover(void *arg) {$/;"	f
+cnt	common/wechat.h	/^    int cnt;$/;"	m	struct:User
+conf_value_ans	common/common.c	/^char conf_value_ans[512] = {0};$/;"	v
+config	wechat.c	/^char *config = ".\/chat.conf";$/;"	v
+create_newwin	common/chat_ui.c	/^WINDOW *create_newwin(int width, int height, int startx, int starty) {$/;"	f
+del_from_reactor	common/reactor.c	/^void del_from_reactor(int fd) {$/;"	f
+fd	common/wechat.h	/^    int fd;$/;"	m	struct:User
+flag	common/wechat.h	/^    int flag;  \/\/ 判断是否在线  0：不在线  1：在线$/;"	m	struct:User
+from	common/wechat.h	/^    char from[20];$/;"	m	struct:Msg
+func	test/bbb.c	/^void func() {$/;"	f
+func	test/fff.cpp	/^void func(char *ip) {$/;"	f
+func2	test/fff.cpp	/^void func2() {$/;"	f
+func3	test/fff.cpp	/^void func3() {$/;"	f
+get_value	common/common.c	/^char *get_value(const char *path, const char *key) {$/;"	f
+gotoxy	common/chat_ui.c	/^void gotoxy(int x, int y) {$/;"	f
+gotoxy_putc	common/chat_ui.c	/^void gotoxy_putc(int x, int y, char c) {$/;"	f
+gotoxy_puts	common/chat_ui.c	/^void gotoxy_puts(int x, int y, char *s) {$/;"	f
+heart_beat	common/heart_beat.c	/^void *heart_beat(void *arg) {$/;"	f
+i	test/aaa.c	/^int i = 1;$/;"	v
+init_ui	common/chat_ui.c	/^void init_ui() {$/;"	f
+logout	wechat.c	/^void logout(int signum) {$/;"	f
+main	test/aaa.c	/^int main() {$/;"	f
+main	test/ccc.cpp	/^int main() {$/;"	f
+main	test/ddd.cpp	/^int main() {$/;"	f
+main	test/eee.cpp	/^int main() {$/;"	f
+main	test/fff.cpp	/^int main() {$/;"	f
+main	wechat.c	/^int main(int argc, char **argv) {$/;"	f
+make_block	common/common.c	/^int make_block(int fd) {$/;"	f
+make_nonblock	common/common.c	/^int make_nonblock(int fd) {$/;"	f
+msg	common/wechat.h	/^    char msg[1024];$/;"	m	struct:Msg
+msg	wechat.c	/^char name[20] = {0}, msg[512] = {0};$/;"	v
+name	common/wechat.h	/^    char name[20];$/;"	m	struct:User
+name	wechat.c	/^char name[20] = {0}, msg[512] = {0};$/;"	v
+port	wechat.c	/^int port = 0;$/;"	v
+print_message	common/chat_ui.c	/^void print_message(WINDOW *win, struct ChatMsg *msg, int type) {$/;"	f
+reactor	common/reactor.c	/^void *reactor(void *arg) {$/;"	f
+send_chat	common/send_chat.c	/^void *send_chat(void *arg) {$/;"	f
+show_help	common/chat_ui.c	/^void show_help() {              \/\/ 打印具体的帮助信息$/;"	f
+socket_create_udp	common/udp_server.c	/^int socket_create_udp(int port) {$/;"	f
+socket_udp	common/udp_client.c	/^int socket_udp() {$/;"	f
+subfd	wechat.c	/^int subfd;$/;"	v
+to	common/wechat.h	/^    char to[20];$/;"	m	struct:Msg
+type	common/wechat.h	/^    int type;$/;"	m	struct:Msg
+udp_accept	common/udp_server.c	/^int udp_accept(int fd, struct User *user) {$/;"	f
+udp_connect	common/udp_client.c	/^int udp_connect(struct sockaddr_in *client) {$/;"	f
+users	wechat.c	/^struct User *users;$/;"	v	typeref:struct:User
+w_gotoxy_putc	common/chat_ui.c	/^void w_gotoxy_putc(WINDOW *win, int x, int y, char c) {$/;"	f
+w_gotoxy_puts	common/chat_ui.c	/^void w_gotoxy_puts(WINDOW *win, int x, int y, char *s) {$/;"	f
