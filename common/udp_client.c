@@ -9,6 +9,7 @@
 
 extern int port;
 
+//创建udp的socket的描述符
 int socket_udp() {
     int sockfd;
 
@@ -19,6 +20,7 @@ int socket_udp() {
     return sockfd;
 }
 
+//建立udp的connect连接
 int udp_connect(struct sockaddr_in *client) {
     int sockfd;
     
@@ -26,8 +28,6 @@ int udp_connect(struct sockaddr_in *client) {
         return -1;
     }
     
-    //printf("ntohs(client->sin_port) : %d\n", ntohs(client->sin_port));
-
     client->sin_port = htons(8888);
 
     if(connect(sockfd, (struct sockaddr *)client, sizeof(struct sockaddr)) < 0) {

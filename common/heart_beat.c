@@ -9,7 +9,7 @@
 
 extern struct User *users;
 extern char name[20];
-
+//发送心跳线程函数，检测在线用户
 void *heart_beat(void *arg) {
     struct Msg heart;
     heart.type = CHAT_HEART;
@@ -24,7 +24,6 @@ void *heart_beat(void *arg) {
                     DBG("🔧 "RED"<%s>"NONE"is removed from sub reactor...\n", users[i].name);
                     close(users[i].fd);
                 }
-                // printf("%s : %d\n", users[i].name, users[i].cnt); 
                 send(users[i].fd, (void *)&heart, sizeof(heart), 0);
                 users[i].cnt--;
             }

@@ -1,17 +1,10 @@
-/*************************************************************************
-	> File Name: client_discover.c
-	> Author: 
-	> Mail: 
-	> Created Time: Tue 20 Apr 2021 07:44:25 AM CST
- ************************************************************************/
-
 #include "head.h"
 
 extern char *config;
 extern char name[20];
 extern char msg[512];
 
-// 开辟一个线程来处理
+// 开辟一个线程来给所有配置文件中的用户发送SYN信息
 void *client_discover(void *arg) {
     char file[512] = {0};
     FILE *fp;
@@ -42,9 +35,6 @@ void *client_discover(void *arg) {
         if(!strlen(ip)) continue;
         client.sin_addr.s_addr = inet_addr(ip);
         sendto(sockfd, (void *)&request, sizeof(request), 0, (struct sockaddr *)&client, sizeof(client));
-
-        //DBG(GREEN"<Discover Send>"NONE" I'm %s, msg is %s...\n", request.from, request.msg);
-        //DBG(GREEN"<Discover Send>"NONE" I'm %s, msg is %s...\n", name, msg);
     }
     DBG("<Ip Discover> end...\n");
 }

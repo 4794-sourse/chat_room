@@ -38,11 +38,8 @@
 #include <sys/time.h>
 #include <ncurses.h>
 #include <locale.h>
-//#include <cjson/cJSON.h>
 
 #include "color.h"
-//#include "tcp_client.h"
-//#include "tcp_server.h"
 #include "common.h"
 #include "wechat.h"
 #include "udp_server.h"
@@ -51,7 +48,6 @@
 #include "client_discover.h"
 #include "heart_beat.h"
 #include "send_chat.h"
-//#include "chat_ui.h"
 
 #ifdef _D
 #define DBG(fmt, args...) printf(fmt, ##args)

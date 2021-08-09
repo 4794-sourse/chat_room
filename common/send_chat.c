@@ -24,4 +24,5 @@ void *send_chat(void *arg) {
             }
         }
     }
+    return NULL;
 }

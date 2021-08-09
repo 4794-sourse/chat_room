@@ -1,10 +1,3 @@
-/*************************************************************************
-	> File Name: common.c
-	> Author: 
-	> Mail: 
-	> Created Time: Sun 18 Apr 2021 10:33:39 AM CST
- ************************************************************************/
-
 #include "head.h"
 
 char conf_value_ans[512] = {0};
@@ -53,10 +46,6 @@ char *get_value(const char *path, const char *key) {
             // 把 '=' 后面的内容赋给 conf_value_ans
             // 例: sub='name=ccc' line='name=ccc' conf_value_ans='ccc'
             strcpy(conf_value_ans, line + strlen(key) + 1);
-            /* printf("%s%d", conf_value_ans, strlen(conf_value_ans));
-            结果：ccc (结尾有换行符)
-                  4
-            */
             conf_value_ans[strlen(conf_value_ans) - 1] = '\0';
         }
     }

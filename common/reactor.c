@@ -11,31 +11,34 @@ extern int subfd;
 extern struct User *users;
 extern char name[20];
 
-void add_event_ptr(int epollfd, int fd, int events, struct User *user) {
+// 向从反应堆(subfd) 中注册套接字为 fd 的事件
+void add_event_ptr(int subfd, int fd, int events, struct User *user) {
     struct epoll_event ev;
     ev.events = events;
     ev.data.ptr = (void *)user;
-    // 向从反应堆(subfd) 中注册套接字为 fd 的事件
-    epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &ev);
+    epoll_ctl(subfd, EPOLL_CTL_ADD, fd, &ev);
+    return ;
 }
 
-int add_to_reactor(int fd, struct User *user) {
+//添加从反应堆中
+int add_to_reactor(int subfd, struct User *user) {
     int sub = user->fd;
     users[sub] = *user;
-
-    add_event_ptr(fd, users[sub].fd, EPOLLIN | EPOLLET, &users[sub]);
+    add_event_ptr(subfd, users[sub].fd, EPOLLIN | EPOLLET, &users[sub]);
+    return 0;
 }
 
+//在从反应堆中删除
 void del_from_reactor(int fd) {
     epoll_ctl(subfd, EPOLL_CTL_DEL, fd, NULL);
 }
 
+//线程函数，处理通讯消息类型
 void *reactor(void *arg) {
     struct epoll_event events[20];
     struct Msg msg;
     while(1) {
         int nfds = epoll_wait(subfd, events, 20, -1);
-
         // 在线程中调用 exit(1) 会让整个程序全部退出
         if(nfds < 0) exit(1);
         for(int i = 0; i < nfds; i++) {
@@ -43,14 +46,6 @@ void *reactor(void *arg) {
             recv(fd, &msg, sizeof(msg), 0);
             if(strlen(msg.from) > 0) strcpy(users[fd].name, msg.from);
             users[fd].cnt = 5;
-            
-            // 这里用于测试第一次发给别人后，别人回复给我的消息是否接受到
-            /*
-            if((msg.type & CHAT_ACK) && (msg.type & CHAT_SYN)) {
-                printf("CCCCCCCCC\n");
-            }
-            */
-            
             if(msg.type & CHAT_HEART) {
                 DBG(YELLOW"<%s>"NONE" 🧡  -> ️"L_BLUE"<Me>"NONE"\n", users[fd].name);
                 msg.type = CHAT_ACK;
@@ -74,4 +69,5 @@ void *reactor(void *arg) {
             }
         }
     }
+    return NULL;
 }
